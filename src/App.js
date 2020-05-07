@@ -60,6 +60,7 @@ class App extends Component {
         <div>
             <p>List & conditionals practice</p>
             <input onChange={this.handleUserTextChange.bind(this)} value={this.state.userText} />
+            <p>{this.state.userText}</p>
             <UserTextValidation userText={this.state.userText} />
             <div>
               {this.renderTextCharacters()}
