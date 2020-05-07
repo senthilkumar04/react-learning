@@ -61,7 +61,7 @@ class App extends Component {
             <p>List & conditionals practice</p>
             <input onChange={this.handleUserTextChange.bind(this)} value={this.state.userText} />
             <p>{this.state.userText}</p>
-            <UserTextValidation userText={this.state.userText} />
+            <UserTextValidation userTextLength={this.state.userText.length} />
             <div>
               {this.renderTextCharacters()}
             </div>

@@ -1,12 +1,11 @@
 import React from 'react';
 
-const UserTextValidation = ({ userText }) => {
-    const [ textminLength, textMaxLength ] = [ 5, 10 ];
+const UserTextValidation = ({ userTextLength }) => {
     let userValidationText = null;
-    if (userText && userText.length > 0 && userText.length < textminLength){
+    if (userTextLength < 5){
         userValidationText = <p>Text too short</p>;
     }
-    else if (userText && userText.length > textMaxLength) {
+    else {
         userValidationText = <p>Text long enough</p>;
     }
     return userValidationText;
