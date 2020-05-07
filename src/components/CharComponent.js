@@ -10,7 +10,7 @@ const CharComponent = ({ textCharacter, removeCharacter }) => {
     }
 
     return (
-        <div onClick={() => { removeCharacter(textCharacter) }} style={style}>
+        <div onClick={removeCharacter} style={style}>
             <span>{textCharacter}</span>
         </div>
     );

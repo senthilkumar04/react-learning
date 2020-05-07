@@ -24,22 +24,18 @@ class App extends Component {
     })
   }
 
-  removeUserTextCharacter(character) {
+  removeUserTextCharacter(index) {
     const characters = this.state.userText.split('');
-    const characterList = characters.slice();
-    const characterIndex = characterList.findIndex(char => {
-      return character === char;
-    });
-    characterList.splice(characterIndex, 1);
-    const userText = characterList.join('');
+    characters.splice(index, 1);
+    const userText = characters.join('');
     this.setState({ userText });
   }
 
   renderTextCharacters() {
     if(this.state.userText.length > 0) {
       return this.state.userText.split('').map((character, index) => {
-        return <CharComponent removeCharacter={(character) => {
-          this.removeUserTextCharacter(character);
+        return <CharComponent removeCharacter={() => {
+          this.removeUserTextCharacter(index);
         }} textCharacter={character} key={index} />
       })
     }
